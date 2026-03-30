@@ -1,0 +1,21 @@
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+
+        # if len()
+
+        # group colors
+        color_count = [0] * 3
+        for n in nums:
+            color_count[n] += 1
+        
+        # loop through each group and replace the elements in num with the elements in the group
+        # print(color_group)
+        index = 0
+        for i in range(3):
+            while color_count[i]:
+                color_count[i] -= 1
+                nums[index] = i
+                index += 1
